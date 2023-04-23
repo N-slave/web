@@ -17,11 +17,14 @@
     width: 500px;
     float: left;
 }
-
+/* 伪类选择器,清除浮动,在容器的before和after都清除浮动最保险 */
 .clear::before,
 .clear::after {
+    /* css中的content可以实现通过css添加内容 */
     content: '';
+    /* 将内容转换为块元素,相当于在容器之前和之后都有一个内容为空的盒子 */
     display: block;
+    /* 清除浮动 */
     clear: both;
 }
 
